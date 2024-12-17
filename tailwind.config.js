@@ -6,8 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Space Grotesk', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
       animation: {
         'gradient': 'gradient 8s linear infinite',
+        'blob': 'blob 7s infinite',
       },
       keyframes: {
         gradient: {
@@ -18,6 +23,20 @@ export default {
           '50%': {
             'background-size': '200% 200%',
             'background-position': 'right center'
+          },
+        },
+        blob: {
+          '0%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px) scale(1.1)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px) scale(0.9)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px) scale(1)',
           },
         },
       },

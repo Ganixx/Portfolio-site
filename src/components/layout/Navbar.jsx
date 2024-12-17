@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { profile } from '../../data/profile'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +14,7 @@ const Navbar = () => {
   const scrollToSection = (e, href) => {
     e.preventDefault()
     const element = document.querySelector(href)
-    const navbarHeight = 64 // This should match your navbar height
+    const navbarHeight = 64
     const elementPosition = element.getBoundingClientRect().top
     const offsetPosition = elementPosition + window.pageYOffset - navbarHeight
 
@@ -34,7 +35,7 @@ const Navbar = () => {
             onClick={(e) => scrollToSection(e, '#home')}
             className="gradient-text text-2xl font-bold"
           >
-            DevName
+            {profile.name.split(' ')[0]}
           </a>
 
           {/* Desktop Navigation */}

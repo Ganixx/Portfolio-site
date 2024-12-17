@@ -9,9 +9,17 @@
   --surface: #101010;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-[var(--background)] text-white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .neon-text {
@@ -22,50 +30,17 @@ body {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)];
 }
 
-@layer base {
-  body {
-    @apply antialiased;
-  }
-}
-
 @layer components {
   .btn {
     @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
   }
-  
-  .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600;
-  }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
-}
-
-/* Add this to your existing CSS */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Optional: Add this if you want to hide the scrollbar but keep functionality */
+/* Hide scrollbar but keep functionality */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* For Firefox */
 * {
   scrollbar-width: none;
 }

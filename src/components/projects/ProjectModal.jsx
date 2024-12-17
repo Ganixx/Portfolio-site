@@ -1,4 +1,6 @@
+import { Dialog } from '@headlessui/react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ImageWithFallback from '../common/ImageWithFallback'
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
   if (!project) return null
@@ -6,90 +8,86 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="fixed inset-4 md:inset-20 z-50 bg-[var(--surface)] rounded-lg overflow-y-auto"
-          >
-            <div className="p-6 space-y-6">
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+        <Dialog
+          static
+          as={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          open={isOpen}
+          onClose={onClose}
+          className="fixed inset-0 z-50 overflow-y-auto"
+        >
+          <div className="min-h-screen px-4 text-center">
+            <Dialog.Overlay className="fixed inset-0 bg-black/75" />
 
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-64 md:h-96 object-cover rounded-lg"
-              />
+            <div className="inline-block w-full max-w-4xl my-8 p-6 text-left align-middle bg-[var(--surface)] rounded-2xl shadow-xl transform transition-all">
+              <div className="aspect-video mb-6">
+                <ImageWithFallback
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
 
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold gradient-text">{project.title}</h2>
-                <p className="text-gray-300">{project.description}</p>
+              <Dialog.Title as="h3" className="text-3xl font-bold gradient-text mb-4">
+                {project.title}
+              </Dialog.Title>
 
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 rounded-full bg-[var(--primary)]/10 text-[var(--primary)]"
-                      >
-                        {tech}
-                      </span>
+              <p className="text-gray-300 mb-6">{project.description}</p>
+
+              {project.features && (
+                <div className="mb-6">
+                  <h4 className="text-xl font-semibold text-[var(--primary)] mb-3">Key Features</h4>
+                  <ul className="list-disc list-inside space-y-2 text-gray-300">
+                    {project.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
+              )}
 
-                <div className="flex gap-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-black"
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold text-[var(--primary)] mb-3">Technologies Used</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-black/30 rounded-full text-[var(--primary)]"
                     >
-                      Live Demo
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)]/10"
-                    >
-                      View Code
-                    </a>
-                  )}
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
+
+              <div className="flex gap-4">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn bg-[var(--primary)] hover:bg-[var(--primary)]/80 text-black"
+                >
+                  View Live
+                </a>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)]/10"
+                >
+                  View Code
+                </a>
+                <button
+                  onClick={onClose}
+                  className="btn bg-gray-600 hover:bg-gray-700 text-white ml-auto"
+                >
+                  Close
+                </button>
+              </div>
             </div>
-          </motion.div>
-        </>
+          </div>
+        </Dialog>
       )}
     </AnimatePresence>
   )
