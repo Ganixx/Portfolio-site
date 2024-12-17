@@ -21,12 +21,14 @@ const ProjectCard = ({ project, onClick }) => {
             />
           </div>
           <h3 className="text-xl font-semibold gradient-text mb-3">{project.title}</h3>
-          <p className="text-gray-300 text-sm mb-5 line-clamp-2 flex-grow">{project.description}</p>
+          <p className="text-[var(--text-secondary)] text-sm mb-4 line-clamp-2">
+            {project.description}
+          </p>
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 text-sm rounded-full bg-black/30 text-[var(--primary)]"
+                className="text-[var(--text-secondary)] px-2 py-1 text-xs rounded-full bg-[var(--primary)]/10"
               >
                 {tech}
               </span>

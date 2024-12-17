@@ -30,7 +30,7 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl font-bold gradient-text mb-6">Get In Touch</h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-[var(--text-secondary)] text-lg">
             Feel free to reach out for collaborations or just a friendly hello
           </p>
         </div>
@@ -83,7 +83,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="bg-[var(--surface)] p-6 rounded-2xl space-y-6">
             <div className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-[var(--text-secondary)] text-sm font-medium mb-2">
                   Name
                 </label>
                 <input

@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-400 text-sm">
+          <p className="text-[var(--text-tertiary)] text-sm">
             © {currentYear} {profile.name}. All rights reserved.
           </p>
           <div className="flex space-x-4">
@@ -90,7 +90,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[var(--primary)] transition-colors"
+                className="text-[var(--text-secondary)] hover:text-[var(--text-hover)] transition-colors"
                 aria-label={link.name}
               >
                 {link.icon}

@@ -3,10 +3,37 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light dark;
+}
+
+:root[data-theme="dark"] {
   --primary: #00f0ff;
   --secondary: #00ff9d;
   --background: #050505;
   --surface: #101010;
+  --text: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #808080;
+  --surface-alpha: rgba(16, 16, 16, 0.8);
+  --text-hover: #00f0ff;
+  --border: #2a2a2a;
+  --card-text: rgba(255, 255, 255, 0.9);
+  --card-text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+:root[data-theme="light"] {
+  --primary: #0891b2;
+  --secondary: #059669;
+  --background: #ffffff;
+  --surface: #f3f4f6;
+  --text: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --surface-alpha: rgba(243, 244, 246, 0.8);
+  --text-hover: #0891b2;
+  --border: #e5e7eb;
+  --card-text: #1f2937;
+  --card-text-secondary: #4b5563;
 }
 
 html {
@@ -14,7 +41,7 @@ html {
 }
 
 body {
-  @apply bg-[var(--background)] text-white;
+  @apply bg-[var(--background)] text-[var(--text)];
   font-family: 'Space Grotesk', sans-serif;
 }
 

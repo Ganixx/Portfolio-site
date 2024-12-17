@@ -15,7 +15,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h2 className="text-4xl font-bold gradient-text">About Me</h2>
-            <p className="text-gray-300 text-lg">{profile.summary}</p>
+            <p className="text-[var(--text-secondary)] text-lg">{profile.summary}</p>
             <div className="flex flex-col gap-4">
               <div>
                 <span className="text-[var(--primary)]">Location:</span> {profile.location}
@@ -61,7 +61,7 @@ const About = () => {
                 </div>
                 <ul className="list-disc list-inside space-y-2 text-gray-300">
                   {job.achievements.map((achievement, i) => (
-                    <li key={i}>{achievement}</li>
+                    <li key={i} className="text-[var(--text-secondary)]">{achievement}</li>
                   ))}
                 </ul>
               </div>
