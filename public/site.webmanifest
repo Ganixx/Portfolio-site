@@ -1,0 +1,28 @@
+{
+  "name": "Ganesh Gouru - Software Engineer",
+  "short_name": "Ganesh Gouru",
+  "description": "Software Engineer specializing in Java, Spring Boot, React.js, and AWS cloud services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+} 

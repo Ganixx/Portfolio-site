@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#050505"/>
+  <rect width="1200" height="630" fill="url(#noise)" fill-opacity="0.03"/>
+  
+  <!-- Content Container -->
+  <g transform="translate(100, 100)">
+    <!-- Logo -->
+    <g transform="translate(0, 0)">
+      <rect width="96" height="96" rx="24" fill="url(#gradient)"/>
+      <path d="M71 37C71 43 67.5 47.5 60.5 51C67.5 54.5 71 59 71 65.5C71 75 63 80 47 80H35V24H47.5C63 24 71 28.5 71 37ZM61 38.5C61 33.5 57.5 31 50.5 31H44V47H50.5C57.5 47 61 44 61 38.5ZM61 64C61 58.5 57.5 55.5 50 55.5H44V71.5H50C57.5 71.5 61 69 61 64Z" fill="white"/>
+    </g>
+    
+    <!-- Text Content -->
+    <text x="0" y="160" fill="white" style="font-family: 'Space Grotesk'; font-weight: 700; font-size: 72px">Ganesh Gouru</text>
+    <text x="0" y="240" fill="#A0A0A0" style="font-family: 'Space Grotesk'; font-weight: 500; font-size: 36px">Software Engineer</text>
+    
+    <!-- Skills -->
+    <text x="0" y="320" fill="#808080" style="font-family: 'Space Grotesk'; font-weight: 400; font-size: 24px">Java • Spring Boot • React.js • AWS • Machine Learning</text>
+  </g>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" style="stop-color:#00f0ff"/>
+      <stop offset="100%" style="stop-color:#00ff9d"/>
+    </linearGradient>
+    
+    <!-- Noise Pattern -->
+    <pattern id="noise" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0 0h100v100H0z" fill="#ffffff"/>
+      <circle cx="50" cy="50" r="1" fill="#000000" opacity="0.1"/>
+    </pattern>
+  </defs>
+</svg> 
